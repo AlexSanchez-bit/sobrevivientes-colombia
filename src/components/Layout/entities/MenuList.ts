@@ -1,0 +1,41 @@
+import { Permission } from "@/utils/Permissions";
+import { GroupMenuType } from "./GroupMenu";
+import { type MenuListItem } from "./MenuListItem";
+export const MenuList: MenuListItem[] = [
+  {
+    name: "Administrative",
+    icon: "",
+    router_direction: "",
+    type: GroupMenuType.Static,
+    childrenMenu: [
+      {
+        name: "users",
+        icon: "pi pi-user",
+        router_direction: "/users",
+        type: GroupMenuType.Normal,
+        permission: [Permission.READ_USER],
+      },
+      {
+        name: "Testimonios",
+        icon: "pi pi-clipboard",
+        router_direction: "/testimonies",
+        type: GroupMenuType.Normal,
+        permission: [Permission.READ_TESTIMONIES],
+      },
+      {
+        name: "Tipos Laicos",
+        icon: "pi pi-crown",
+        router_direction: "/laics",
+        type: GroupMenuType.Normal,
+        permission: [Permission.READ_LAIC_TYPES],
+      },
+      {
+        name: "Promociones",
+        icon: "pi pi-clock",
+        router_direction: "/promotions",
+        type: GroupMenuType.Normal,
+        permission: [Permission.READ_PROMOTION],
+      },
+    ],
+  },
+];

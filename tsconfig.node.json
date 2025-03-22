@@ -1,0 +1,31 @@
+{
+  "extends": "@tsconfig/node20/tsconfig.json",
+  "include": [
+    "vite.config.*",
+    "vitest.config.*",
+    "cypress.config.*",
+    "nightwatch.conf.*",
+    "playwright.config.*"
+  ],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["esnext", "dom"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "strict": false, // Desactiva el modo estricto
+    "noImplicitAny": false, // Desactiva la verificación de "any" implícito
+    "strictNullChecks": false, // Desactiva la verificación de null/undefined
+    "strictFunctionTypes": false, // Desactiva la verificación estricta de tipos de función
+    "strictBindCallApply": false, // Desactiva la verificación estricta de métodos bind, call y apply
+    "strictPropertyInitialization": false, // Desactiva la verificación de inicialización estricta de propiedades
+    "noImplicitThis": false, // Desactiva la verificación de "this" implícito
+    "alwaysStrict": false, // Desactiva la inclusión automática de "use strict"
+    "noEmit": true,
+    "jsx": "preserve"
+  },
+  "exclude": ["node_modules"]
+}

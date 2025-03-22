@@ -1,0 +1,43 @@
+:root {
+  --primary-color-brick: #df4c26; /* Ladrillo */
+  --primary-color-sea: #4c6b8b; /* Mar */
+  --primary-color-grass: #15664c; /* Naturaleza */
+  --primary-color-wood: #ebd7b8; /* Madera */
+
+  --secondary-color-blue: #011f3b; /* Azul */
+  --secondary-color-pink: #f494ae; /* Rosa */
+  --secondary-color-salmon: #f5887a; /* Salmon */
+  --secondary-color-cyan: #00aed0; /* Cyan */
+
+  --accent-color: #ffc107; /* Amarillo */
+}
+
+@font-face {
+  font-family: "PierSansBold";
+  src: url("@/assets/fonts/PierSans/PierSans-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PierSansMedium";
+  src: url("@/assets/fonts/PierSans/PierSans-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PierSansRegular";
+  src: url("@/assets/fonts/PierSans/PierSans-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AlbraSerifBold";
+  src: url("@/assets/fonts/AlbraSerif/AlbraTRIAL-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AlbraSerifRegular";
+  src: url("@/assets/fonts/AlbraSerif/AlbraTRIAL-Regular.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "AlbraSerifMedium";
+  src: url("@/assets/fonts/AlbraSerif/AlbraTRIAL-Medium.otf") format("opentype");
+}

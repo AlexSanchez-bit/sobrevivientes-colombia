@@ -1,0 +1,23 @@
+@import "./base.css";
+@import "primeicons/primeicons.css";
+@layer tailwind-base, primevue, tailwind-utilities;
+@layer tailwind-base {
+  @tailwind base;
+}
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+  @tailwind variants;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1024px) {
+  .h-mid-screen {
+    min-height: 50vh;
+  }
+}
