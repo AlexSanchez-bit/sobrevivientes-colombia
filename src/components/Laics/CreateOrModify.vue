@@ -76,14 +76,9 @@ import uploadPublicFile from "@/composables/uploadPublicFile";
 import { useRouter } from "vue-router";
 const service = useLaicsService();
 import { useToastStorage } from "@/stores/ToasterStorage";
-import { useCategoryService } from "@/composables/Shop/Category/useCategoryService";
-import { useI18n } from "vue-i18n";
-import type { ICategory } from "@/services/Shops/Categories/Category.service";
 import { useLaicsService } from "@/composables/LaicType/useLaicService";
 import type { ILaic } from "@/services/Laics/Laic.service";
 const { notify } = useToastStorage();
-
-const { t } = useI18n();
 
 const router = useRouter();
 const loading = ref(false);
