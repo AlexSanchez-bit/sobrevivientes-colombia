@@ -13,10 +13,11 @@ export interface ITestimony {
   laic_involved?: number;
   location?: any;
   status: TestimonyStatus;
+  text: string;
 }
 
 export class TestimonyService extends TableCrudService<ITestimony> {
   constructor() {
-    super("testimony", ["*"]);
+    super("testimony", ["*,laic_:laic_type(*)"]);
   }
 }

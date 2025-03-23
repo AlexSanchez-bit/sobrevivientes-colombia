@@ -48,7 +48,9 @@
     "WRITE_TESTIMONY": "Modificar testimonios",
     "WRITE_LAIC_TYPE": "Modificar tipos de Laicos",
     "WRITE_PROMOTION": "Modificar Promociones",
-    "WRITE_USER_PERMISSION": "Modificar permisos de usuarios"
+    "WRITE_USER_PERMISSION": "Modificar permisos de usuarios",
+    "WRITE_BLOG_ENTRIES": "Escribir Blog",
+    "READ_BLOG_ENTRIES": "Leer Blog"
   },
   "materials": "Ingredientes",
   "material": "Ingrediente",

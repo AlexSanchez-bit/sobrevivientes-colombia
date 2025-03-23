@@ -36,6 +36,13 @@ export const MenuList: MenuListItem[] = [
         type: GroupMenuType.Normal,
         permission: [Permission.READ_PROMOTION],
       },
+      {
+        name: "Blog",
+        icon: "pi pi-clipboard",
+        router_direction: "/blog-entries",
+        type: GroupMenuType.Normal,
+        permission: [Permission.READ_BLOG_ENTRIES],
+      },
     ],
   },
 ];
