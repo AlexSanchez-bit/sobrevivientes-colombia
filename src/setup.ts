@@ -16,3 +16,6 @@ const supabaseUrl = (import.meta as any).env.VITE_SUPABASE_URL!;
 const supabaseKey = (import.meta as any).env.VITE_ANON_KEY!;
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
+
+console.log(supabaseUrl, supabaseKey);
+console.log(supabase);

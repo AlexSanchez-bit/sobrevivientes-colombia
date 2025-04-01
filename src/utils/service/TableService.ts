@@ -102,12 +102,10 @@ export abstract class TableService<T> {
       }
     }
 
-    query = query
-      .range(
-        pagination.page * pagination.ammount,
-        pagination.page * pagination.ammount + pagination.ammount - 1,
-      )
-      .order("created_at", { ascending: false });
+    query = query.range(
+      pagination.page * pagination.ammount,
+      pagination.page * pagination.ammount + pagination.ammount - 1,
+    );
 
     let { data, error } = await query;
 

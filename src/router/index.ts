@@ -7,6 +7,8 @@ import { testimonyRoutes } from "./modules/testimonies";
 import { laicsRoutes } from "./modules/laics";
 import { promotionsRoutes } from "./modules/promotions/promotions";
 import { blogRoutes } from "./modules/blog_entries";
+import { chatRoutes } from "./modules/chat";
+import { botRoutes } from "./modules/bot";
 
 const router = createRouter({
   history: createWebHistory("#"),
@@ -26,6 +28,8 @@ const router = createRouter({
         ...userRoutes,
         ...promotionsRoutes,
         ...blogRoutes,
+        ...chatRoutes,
+        ...botRoutes,
       ],
     },
     {

@@ -45,4 +45,26 @@ export const MenuList: MenuListItem[] = [
       },
     ],
   },
+  {
+    name: "Atención a usuarios",
+    icon: "pi pi-envelope",
+    router_direction: "",
+    type: GroupMenuType.Static,
+    childrenMenu: [
+      {
+        name: "Chat",
+        icon: "pi pi-comments",
+        router_direction: "/chat",
+        type: GroupMenuType.Normal,
+        permission: [Permission.READ_CHAT],
+      },
+      {
+        name: "Bot Data",
+        icon: "pi pi-file-pdf",
+        router_direction: "/bot",
+        type: GroupMenuType.Normal,
+        permission: [Permission.READ_BOT_TRAIN],
+      },
+    ],
+  },
 ];
