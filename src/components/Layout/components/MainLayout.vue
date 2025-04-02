@@ -107,6 +107,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import Button from "primevue/button";
+import LanguageSelector from "../../LanguageSelector.vue";
 import StaticMenu from "./StaticMenu.vue";
 import { MenuList } from "../entities/MenuList";
 import { ref, provide, computed, onMounted, onUnmounted } from "vue";
@@ -123,6 +124,7 @@ import { useAuthStore } from "@/stores/AuthStore";
 const authService = useAuthStore();
 const passchange = ref(false);
 const static_pane = ref(false);
+const mobile_panel_back = ref(false);
 
 const toggle_static_pane = () => {
   static_pane.value = !static_pane.value;
@@ -288,6 +290,8 @@ onUnmounted(() => {
   .closed {
     width: 0;
     opacity: 0;
+    overflow: hidden;
+    z-index: -100;
   }
 
   .slide-bar:hover {

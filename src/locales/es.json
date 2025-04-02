@@ -50,7 +50,11 @@
     "WRITE_PROMOTION": "Modificar Promociones",
     "WRITE_USER_PERMISSION": "Modificar permisos de usuarios",
     "WRITE_BLOG_ENTRIES": "Escribir Blog",
-    "READ_BLOG_ENTRIES": "Leer Blog"
+    "READ_BLOG_ENTRIES": "Leer Blog",
+    "WRITE_CHAT": "Responder al chat",
+    "READ_CHAT": "Ver mensajes del chat",
+    "WRITE_BOT_TRAIN": "Entrenar el bot",
+    "READ_BOT_TRAIN": "Ver datos de entrenamiento del bot"
   },
   "materials": "Ingredientes",
   "material": "Ingrediente",

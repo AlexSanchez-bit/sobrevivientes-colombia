@@ -16,24 +16,7 @@ export async function uploadBotFile(file: File) {
   const filePath = `${folderName}/${file.name}`;
 
   // Subir el archivo al bucket
-  const { data, error } = await supabase.storage
-    .from(bucketName)
-    .upload(filePath, file);
-
-  if (error) {
-    console.error("Error al subir el archivo:", error.message);
-    return null;
-  }
-
-  console.log("Archivo subido correctamente:", data);
-
-  // Generar la URL pública del archivo (si es necesario)
-  const { data: fdata } = supabase.storage
-    .from(bucketName)
-    .getPublicUrl(filePath);
-  console.log("URL pública:", fdata.publicUrl);
-
-  return fdata.publicUrl;
+  return await supabase.storage.from(bucketName).upload(filePath, file);
 }
 
 export async function removeBotFile(docname: string) {
