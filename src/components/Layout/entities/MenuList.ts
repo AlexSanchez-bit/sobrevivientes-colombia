@@ -59,7 +59,7 @@ export const MenuList: MenuListItem[] = [
         permission: [Permission.READ_CHAT],
       },
       {
-        name: "Bot Data",
+        name: "Datos del bot",
         icon: "pi pi-file-pdf",
         router_direction: "/bot",
         type: GroupMenuType.Normal,

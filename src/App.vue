@@ -16,7 +16,7 @@ const router = useRouter();
 onMounted(async () => {
   const resp = await supabase.auth.refreshSession();
   if (resp.error) {
-    router.push("/auth/login");
+    router.push("/login");
   } else {
     const { data, error } = await supabase
       .from("user")
@@ -27,7 +27,6 @@ onMounted(async () => {
       data.user_permissions = data.user_permissions.map(
         (perm) => perm.permission.name,
       );
-
       authStore.autenticate(data);
     }
   }

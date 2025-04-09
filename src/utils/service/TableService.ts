@@ -129,8 +129,8 @@ export abstract class TableService<T> {
   ): Promise<{ data: any[]; totalCount: number }> {
     if (
       this.pagination == null ||
-      pagination.ammount != this.pagination.ammount ||
-      pagination.page != this.pagination.page
+      pagination.ammount != this.pagination?.ammount ||
+      pagination.page != this.pagination?.page
     ) {
       this.pagination = pagination;
     }
