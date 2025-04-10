@@ -1,1 +1,0 @@
-import{_ as e,o,c as s,a as c}from"./index-CQzVw4Mb.js";const r={},t={class:"w-full h-full flex"},d=c("div",{class:"flex-1 rounded-lg border-dashed border-wood border-4 m-6"},null,-1),a=[d];function l(n,_){return o(),s("div",t,a)}const i=e(r,[["render",l]]);export{i as default};

@@ -6,9 +6,12 @@ import { ref } from "vue";
 import Dropdown from "primevue/dropdown";
 import { useToastStorage } from "@/stores/ToasterStorage";
 import { useI18n } from "vue-i18n";
-import { TestimonyStatus } from "@/services/Testimony/Testimony.service";
+import {
+  Gender,
+  TestimonyStatus,
+} from "@/services/Testimony/Testimony.service";
 import { useTestimonyService } from "@/composables/Testimony/useTestimonyService";
-import { ITestimony } from "@/services/Testimony/Testimony.service";
+import { type ITestimony } from "@/services/Testimony/Testimony.service";
 
 import Button from "primevue/button";
 import Dialog from "primevue/dialog";
@@ -16,7 +19,8 @@ import Tooltip from "primevue/tooltip";
 import Avatar from "primevue/avatar";
 
 // Añade estas variables reactivas
-const selectedTestimony = ref<ITestimony | null>(null);
+type ShowTestimony = (ITestimony & { laic_?: any }) | null;
+const selectedTestimony = ref<ShowTestimony>(null);
 const detailModalVisible = ref(false);
 
 // Añade esta función
@@ -28,6 +32,8 @@ const openDetails = (testimony: ITestimony) => {
 const service = useTestimonyService();
 
 const table = ref();
+
+const genders = Object.keys(Gender);
 
 const refresh = () => {
   table.value.refresh();
@@ -129,6 +135,34 @@ const aviable_statuses = (status) => {
           </template>
         </MultiSelect>
       </template>
+
+      <template #column-gender="{ data }">
+        <div v-if="data && data.gender">
+          {{ $t(`genders.${data.gender ?? "NIL"}`) }}
+        </div>
+      </template>
+
+      <template #filter-gender="{ filterModel, filterCallback }">
+        <MultiSelect
+          v-model="filterModel.value"
+          display="chip"
+          id="genders"
+          :options="genders"
+          class="min-w-36"
+          @change="filterCallback"
+        >
+          <template #chip="slotProps">
+            <div class="flex align-items-center">
+              <div>{{ $t(`genders.${slotProps.value}`) }}</div>
+            </div>
+          </template>
+          <template #option="slotProps">
+            <div class="flex align-items-center">
+              <div>{{ $t(`genders.${slotProps.option}`) }}</div>
+            </div>
+          </template>
+        </MultiSelect>
+      </template>
     </Table>
 
     <Dialog
@@ -171,18 +205,25 @@ const aviable_statuses = (status) => {
 
           <div class="col-6">
             <label class="block text-sm font-medium text-[#6f2465]"
-              >Fecha</label
+              >Fecha de Publicación</label
             >
             <p class="text-gray-700">
-              {{ formatDate(selectedTestimony.created_at) }}
+              {{ formatDate(selectedTestimony.created_at as string) }}
             </p>
           </div>
 
-          <div class="col-6" v-if="selectedTestimony.laic_involved">
+          <div class="col-6" v-if="selectedTestimony.age > 0">
+            <label class="block text-sm font-medium text-[#6f2465]">Edad</label>
+            <p class="text-gray-700">{{ selectedTestimony.age }}</p>
+          </div>
+
+          <div class="col-6" v-if="selectedTestimony.gender">
             <label class="block text-sm font-medium text-[#6f2465]"
-              >Personas involucradas</label
+              >Género</label
             >
-            <p class="text-gray-700">{{ selectedTestimony.laic_involved }}</p>
+            <p class="text-gray-700">
+              {{ $t(`genders.${selectedTestimony.gender}`) }}
+            </p>
           </div>
 
           <div class="col-12">

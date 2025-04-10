@@ -212,6 +212,7 @@ export abstract class TableService<T> {
             break;
 
           case FilterMatchMode.IN:
+            if (filter.value == null || filter.value.length == 0) break;
             query = query.in(field, filter.value);
             break;
           case "NOT_IN":

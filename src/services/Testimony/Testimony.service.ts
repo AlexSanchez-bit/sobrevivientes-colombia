@@ -6,14 +6,21 @@ export enum TestimonyStatus {
   DECLINED = "DECLINED",
 }
 
+export enum Gender {
+  MALE = "MALE",
+  FEMALE = "FEMALE",
+  OTHER = "OTHER",
+}
 export interface ITestimony {
   id?: number;
-  created_at: Date;
+  created_at: Date | string;
   name: string;
   laic_involved?: number;
   location?: any;
   status: TestimonyStatus;
   text: string;
+  gender?: Gender;
+  age?: number;
 }
 
 export class TestimonyService extends TableCrudService<ITestimony> {

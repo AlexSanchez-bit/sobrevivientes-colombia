@@ -6,7 +6,7 @@ export function useUserForm(
   email?: string,
   password?: string,
 ) {
-  const { _name, _last_name, _email, _password, _password_confirm } = {
+  const { _name, _last_name, _email, _password } = {
     _name: reactive({ value: name, validity: !!name, touched: !!name }),
     _last_name: reactive({
       value: last_name,

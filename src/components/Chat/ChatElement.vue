@@ -6,7 +6,10 @@
     <div>
       <h3 class="font-bold text-lg">{{ chat.name }}</h3>
 
-      <p v-if="chat.last_message" class="text-sm text-gray-600 mt-1">
+      <p
+        v-if="chat.last_message"
+        class="text-sm text-gray-600 mt-1 line-clamp-2"
+      >
         {{ chat.last_message }}
       </p>
     </div>

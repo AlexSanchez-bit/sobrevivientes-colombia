@@ -35,4 +35,25 @@ export const table_configs: ColumnData[] = [
     showFilterOptions: false,
     sorteable: false,
   },
+  {
+    field: "age",
+    header: "Edad",
+    filter: {
+      matchMode: FilterMatchMode.EQUALS,
+      value: null,
+    },
+    showFilterOptions: true,
+    sorteable: true,
+    dataType: "numeric",
+  },
+  {
+    field: "gender",
+    header: "Género",
+    filter: {
+      matchMode: FilterMatchMode.IN,
+      value: null,
+    },
+    showFilterOptions: false,
+    sorteable: false,
+  },
 ];

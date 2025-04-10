@@ -12,7 +12,7 @@
           :class="{
             'mr-auto bg-darkblue/80 text-white':
               msg.is_human && msg.user != userData.id,
-            'mr-auto bg-purple-900/70 text-white': !msg.is_human,
+            'mr-auto bg-purple-900/70 text-white': msg.user == null,
             'ml-auto bg-darkblue/60 text-white':
               msg.is_human && msg.user == userData.id,
           }"
@@ -30,7 +30,7 @@
             <p class="text-sm leading-relaxed">soporte</p>
           </NuxtLink>
 
-          <p v-if="!msg.is_human" class="text-sm leading-relaxed">
+          <p v-if="!msg.user" class="text-sm leading-relaxed">
             bot <i class="pi pi-microchip-ai"></i>
           </p>
           <span

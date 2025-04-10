@@ -57,7 +57,7 @@
       </div>
       <Button
         v-if="mode != 'create'"
-        @click="save"
+        @click="() => save()"
         :label="$t('save')"
         class="mx-auto my-3 w-full"
         :icon="loading ? 'pi pi-spin pi-spinner' : 'pi pi-check'"

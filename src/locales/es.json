@@ -138,5 +138,11 @@
     "CREATED": "Creado",
     "ACCEPTED": "Aceptado",
     "DECLINED": "Rechazado"
+  },
+  "genders": {
+    "MALE": "Masculino",
+    "FEMALE": "Femenino",
+    "OTHER": "Otro",
+    "NIL": "No especificado"
   }
 }

@@ -6,6 +6,10 @@ export class UserPermissionService implements IGenericList<any> {
     return await supabase.from("permission").select("*");
   }
 
+  async getDetails(id: string | number): Promise<any> {
+    return new Promise(() => {});
+  }
+
   async getUserPermissions(id: string) {
     return await supabase
       .from("user_permissions")
