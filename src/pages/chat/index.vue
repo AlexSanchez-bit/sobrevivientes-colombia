@@ -28,9 +28,9 @@
         />
       </div>
       <!-- Columna central: Ventana de Chat -->
-      <div class="grid-area-messages">
+      <div class="grid-area-messages w-full">
         <ChatWindow
-          class="!h-[90vh]"
+          class="!h-[90vh] w-full"
           :selectedChat="selectedChat"
           :chat-details="chat_details"
         />
@@ -95,6 +95,8 @@ onMounted(() => {
   grid-template-columns: 1fr 2.5fr 1fr;
   grid-template-areas: "chats messages notes";
   @apply min-h-screen;
+  @apply w-full;
+  @apply box-border;
 }
 
 @media (max-width: 768px) {

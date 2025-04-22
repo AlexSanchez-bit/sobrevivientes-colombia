@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 h-full flex flex-col bg-white rounded shadow">
+  <div class="p-4 h-full flex flex-col bg-white rounded shadow relative">
     <div
       ref="messageContainer"
       class="flex-grow overflow-auto space-y-3 pr-2 h-[65vh]"
@@ -8,7 +8,7 @@
         <div
           v-for="msg in formattedMessages"
           :key="msg.id"
-          class="max-w-[75%] p-3 rounded-xl shadow-sm transition-all my-3"
+          class="max-w-[35vw] p-3 rounded-xl shadow-sm transition-all my-3"
           :class="{
             'mr-auto bg-darkblue/80 text-white':
               msg.is_human && msg.user != userData.id,
