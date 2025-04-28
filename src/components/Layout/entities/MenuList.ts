@@ -16,6 +16,13 @@ export const MenuList: MenuListItem[] = [
         permission: [Permission.READ_USER],
       },
       {
+        name: "Miembros del Staff",
+        icon: "pi pi-users",
+        router_direction: "/staff-members",
+        type: GroupMenuType.Normal,
+        permission: [Permission.READ_STAFF_MEMBERS],
+      },
+      {
         name: "Testimonios",
         icon: "pi pi-clipboard",
         router_direction: "/testimonies",
