@@ -42,6 +42,12 @@ export const MenuList: MenuListItem[] = [
     childrenMenu: [
 
       {
+        name: "Políticas",
+        icon: "pi pi-briefcase",
+        router_direction: "/policies",
+        type: GroupMenuType.Normal,
+      },
+      {
         name: "Referidos",
         icon: "pi pi-clipboard",
         router_direction: "/referals",

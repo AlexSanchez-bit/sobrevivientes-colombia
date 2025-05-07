@@ -60,7 +60,8 @@
     "READ_ALLIES":"Ver Permisos",
     "WRITE_ALLIES":"Modificar Permisos",
     "READ_REFERAL":"Ver Referidos",
-    "WRITE_REFERAL":"Modificar Referidos"
+    "WRITE_REFERAL":"Modificar Referidos",
+    "WRITE_POLICY":"Modificar Políticas"
   },
   "materials": "Ingredientes",
   "material": "Ingrediente",

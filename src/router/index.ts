@@ -12,6 +12,7 @@ import { botRoutes } from "./modules/bot";
 import { staffRoutes } from "./modules/staff";
 import { allieRoutes } from "./modules/allies";
 import { referalsRoutes } from "./modules/referals";
+import { policiesRoutes } from "./modules/policies/policies";
 
 const router = createRouter({
   history: createWebHistory("#"),
@@ -29,6 +30,7 @@ const router = createRouter({
         ...testimonyRoutes,
         ...laicsRoutes,
         ...referalsRoutes,
+        ...policiesRoutes,
         ...userRoutes,
         ...promotionsRoutes,
         ...allieRoutes,

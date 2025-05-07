@@ -1,8 +1,7 @@
 import { supabase } from "@/setup";
 
 export default async function uploadPublicFile(file: File) {
-  // Validar si el archivo tiene una extensión permitida
-  const allowedExtensions = ["jpg", "jpeg", "png", "gif", "webp", "svg"];
+  const allowedExtensions = ["jpg", "jpeg", "png", "gif", "webp", "svg", "pdf",];
   const fileExtension = file.name.split(".").pop().toLowerCase();
 
   if (!allowedExtensions.includes(fileExtension)) {
@@ -13,7 +12,7 @@ export default async function uploadPublicFile(file: File) {
   // Ruta del archivo en el bucket (debe incluir la carpeta "public")
   const bucketName = "images";
   const folderName = "public"; // La carpeta donde se debe guardar
-  const filePath = `${folderName}/${Date.now()}${file.name}`;
+  const filePath = `${folderName}/${Date.now()}${file.name.toLowerCase().trim().replace(/ /g, "")}`;
 
   // Subir el archivo al bucket
   const { data, error } = await supabase.storage
