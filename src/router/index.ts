@@ -11,6 +11,7 @@ import { chatRoutes } from "./modules/chat";
 import { botRoutes } from "./modules/bot";
 import { staffRoutes } from "./modules/staff";
 import { allieRoutes } from "./modules/allies";
+import { referalsRoutes } from "./modules/referals";
 
 const router = createRouter({
   history: createWebHistory("#"),
@@ -27,6 +28,7 @@ const router = createRouter({
         },
         ...testimonyRoutes,
         ...laicsRoutes,
+        ...referalsRoutes,
         ...userRoutes,
         ...promotionsRoutes,
         ...allieRoutes,

@@ -74,13 +74,10 @@ const aviable_statuses = (status) => {
       </template>
 
       <template #column-actions="{ data }">
-        <div class="flex justify-center">
-          <Button
-            @click="openDetails(data)"
-            icon="pi pi-eye"
+        <div class="flex justify-center" v-if="data">
+          <Button @click="openDetails(data)" icon="pi pi-eye"
             class="p-button-text p-button-rounded !text-[#6f2465] hover:!bg-[#6f2465]/10"
-            v-tooltip.bottom="'Ver detalles'"
-          />
+            v-tooltip.bottom="'Ver detalles'" />
         </div>
       </template>
 
@@ -92,14 +89,9 @@ const aviable_statuses = (status) => {
 
       <template #column-status="{ data }">
         <p v-if="data && data.status" class="text-md text-gray-700">
-          <Dropdown
-            :model-value="data.status"
-            display="chip"
-            id="statuses"
-            :options="aviable_statuses(data.status)"
+          <Dropdown :model-value="data.status" display="chip" id="statuses" :options="aviable_statuses(data.status)"
             class="min-w-36 !border-none !bg-transparent hover:!!border-gray-400"
-            @change="changeTestimonyStatuses(data.id, $event.value)"
-          >
+            @change="changeTestimonyStatuses(data.id, $event.value)">
             <template #value="slotProps">
               <div class="flex align-items-center">
                 <div>{{ $t(`testimony_status.${slotProps.value}`) }}</div>
@@ -115,14 +107,8 @@ const aviable_statuses = (status) => {
       </template>
 
       <template #filter-status="{ filterModel, filterCallback }">
-        <MultiSelect
-          v-model="filterModel.value"
-          display="chip"
-          id="statuses"
-          :options="statuses"
-          class="min-w-36"
-          @change="filterCallback"
-        >
+        <MultiSelect v-model="filterModel.value" display="chip" id="statuses" :options="statuses" class="min-w-36"
+          @change="filterCallback">
           <template #chip="slotProps">
             <div class="flex align-items-center">
               <div>{{ $t(`testimony_status.${slotProps.value}`) }}</div>
@@ -143,14 +129,8 @@ const aviable_statuses = (status) => {
       </template>
 
       <template #filter-gender="{ filterModel, filterCallback }">
-        <MultiSelect
-          v-model="filterModel.value"
-          display="chip"
-          id="genders"
-          :options="genders"
-          class="min-w-36"
-          @change="filterCallback"
-        >
+        <MultiSelect v-model="filterModel.value" display="chip" id="genders" :options="genders" class="min-w-36"
+          @change="filterCallback">
           <template #chip="slotProps">
             <div class="flex align-items-center">
               <div>{{ $t(`genders.${slotProps.value}`) }}</div>
@@ -165,21 +145,13 @@ const aviable_statuses = (status) => {
       </template>
     </Table>
 
-    <Dialog
-      v-model:visible="detailModalVisible"
-      header="Detalles del Testimonio"
-      :style="{ width: '90vw', maxWidth: '700px' }"
-      :modal="true"
-    >
+    <Dialog v-model:visible="detailModalVisible" header="Detalles del Testimonio"
+      :style="{ width: '90vw', maxWidth: '700px' }" :modal="true">
       <div v-if="selectedTestimony" class="grid gap-4">
         <!-- Sección Laico -->
         <div class="col-12 flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
-          <Avatar
-            v-if="selectedTestimony.laic_?.image"
-            :image="selectedTestimony.laic_.image"
-            size="large"
-            shape="circle"
-          />
+          <Avatar v-if="selectedTestimony.laic_?.image" :image="selectedTestimony.laic_.image" size="large"
+            shape="circle" />
           <div>
             <h3 class="font-bold text-[#6f2465]">Laico asociado</h3>
             <p class="text-gray-600">
@@ -191,9 +163,7 @@ const aviable_statuses = (status) => {
         <!-- Información principal -->
         <div class="col-12 grid gap-y-4">
           <div class="col-6">
-            <label class="block text-sm font-medium text-[#6f2465]"
-              >Nombre</label
-            >
+            <label class="block text-sm font-medium text-[#6f2465]">Nombre</label>
             <p class="text-gray-700">
               {{
                 selectedTestimony.name == null || selectedTestimony.name == ""
@@ -204,9 +174,7 @@ const aviable_statuses = (status) => {
           </div>
 
           <div class="col-6">
-            <label class="block text-sm font-medium text-[#6f2465]"
-              >Fecha de Publicación</label
-            >
+            <label class="block text-sm font-medium text-[#6f2465]">Fecha de Publicación</label>
             <p class="text-gray-700">
               {{ formatDate(selectedTestimony.created_at as string) }}
             </p>
@@ -218,18 +186,14 @@ const aviable_statuses = (status) => {
           </div>
 
           <div class="col-6" v-if="selectedTestimony.gender">
-            <label class="block text-sm font-medium text-[#6f2465]"
-              >Género</label
-            >
+            <label class="block text-sm font-medium text-[#6f2465]">Género</label>
             <p class="text-gray-700">
               {{ $t(`genders.${selectedTestimony.gender}`) }}
             </p>
           </div>
 
           <div class="col-12">
-            <label class="block text-sm font-medium text-[#6f2465]"
-              >Descripción</label
-            >
+            <label class="block text-sm font-medium text-[#6f2465]">Descripción</label>
             <p v-if="selectedTestimony.text" class="text-gray-700">
               {{ selectedTestimony.text }}
             </p>

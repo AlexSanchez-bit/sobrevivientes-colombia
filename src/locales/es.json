@@ -58,7 +58,9 @@
     "WRITE_STAFF_MEMBER": "Modificar Staff",
     "READ_STAFF_MEMBER": "Ver Staff",
     "READ_ALLIES":"Ver Permisos",
-    "WRITE_ALLIES":"Modificar Permisos"
+    "WRITE_ALLIES":"Modificar Permisos",
+    "READ_REFERAL":"Ver Referidos",
+    "WRITE_REFERAL":"Modificar Referidos"
   },
   "materials": "Ingredientes",
   "material": "Ingrediente",
@@ -141,6 +143,11 @@
   "testimony_status": {
     "CREATED": "Creado",
     "ACCEPTED": "Aceptado",
+    "DECLINED": "Rechazado"
+  },
+  "referal_status": {
+    "CREATED": "Creado",
+    "ACCEPTED": "Revisado",
     "DECLINED": "Rechazado"
   },
   "genders": {
