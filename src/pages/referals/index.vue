@@ -10,22 +10,19 @@ import {
   Gender,
   TestimonyStatus,
 } from "@/services/Testimony/Testimony.service";
-import { type ITestimony } from "@/services/Testimony/Testimony.service";
 
 import Button from "primevue/button";
 import Dialog from "primevue/dialog";
 import Avatar from "primevue/avatar";
 import { useReferalService } from "@/composables/Referal/useReferalService";
-import type { ReferalStatus } from "@/services/Referal/Referal.service";
-import { Permission } from "@/utils/Permissions";
+import type { IReferal, ReferalStatus } from "@/services/Referal/Referal.service";
 
-type ShowTestimony = (ITestimony & { laic_?: any }) | null;
-const selectedTestimony = ref<ShowTestimony>(null);
+const selectedReferal = ref<IReferal>(null);
 const detailModalVisible = ref(false);
 
 // Añade esta función
-const openDetails = (testimony: ITestimony) => {
-  selectedTestimony.value = testimony;
+const openDetails = (referal: IReferal) => {
+  selectedReferal.value = referal;
   detailModalVisible.value = true;
 };
 
@@ -129,30 +126,18 @@ const aviable_statuses = (status) => {
 
     </Table>
 
-    <Dialog v-model:visible="detailModalVisible" header="Detalles del Testimonio"
+    <Dialog v-model:visible="detailModalVisible" header="Detalles del Testimonio Referido"
       :style="{ width: '90vw', maxWidth: '700px' }" :modal="true">
-      <div v-if="selectedTestimony" class="grid gap-4">
-        <!-- Sección Laico -->
-        <div class="col-12 flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
-          <Avatar v-if="selectedTestimony.laic_?.image" :image="selectedTestimony.laic_.image" size="large"
-            shape="circle" />
-          <div>
-            <h3 class="font-bold text-[#6f2465]">Laico asociado</h3>
-            <p class="text-gray-600">
-              {{ selectedTestimony.laic_?.name || "Sin laico asignado" }}
-            </p>
-          </div>
-        </div>
-
+      <div v-if="selectedReferal" class="grid gap-4">
         <!-- Información principal -->
         <div class="col-12 grid gap-y-4">
           <div class="col-6">
             <label class="block text-sm font-medium text-[#6f2465]">Nombre</label>
             <p class="text-gray-700">
               {{
-                selectedTestimony.name == null || selectedTestimony.name == ""
+                selectedReferal.name == null || selectedReferal.name == ""
                   ? "anonimo"
-                  : selectedTestimony.name
+                  : selectedReferal.name
               }}
             </p>
           </div>
@@ -160,26 +145,26 @@ const aviable_statuses = (status) => {
           <div class="col-6">
             <label class="block text-sm font-medium text-[#6f2465]">Fecha de Publicación</label>
             <p class="text-gray-700">
-              {{ formatDate(selectedTestimony.created_at as string) }}
+              {{ formatDate(selectedReferal.created_at as string) }}
             </p>
           </div>
 
-          <div class="col-6" v-if="selectedTestimony.age > 0">
-            <label class="block text-sm font-medium text-[#6f2465]">Edad</label>
-            <p class="text-gray-700">{{ selectedTestimony.age }}</p>
+          <div class="col-6" v-if="selectedReferal.email">
+            <label class="block text-sm font-medium text-[#6f2465]">Email</label>
+            <p class="text-gray-700">{{ selectedReferal.email }}</p>
           </div>
 
-          <div class="col-6" v-if="selectedTestimony.gender">
-            <label class="block text-sm font-medium text-[#6f2465]">Género</label>
+          <div class="col-6" v-if="selectedReferal.phone_number">
+            <label class="block text-sm font-medium text-[#6f2465]">Número de Teléfono</label>
             <p class="text-gray-700">
-              {{ $t(`genders.${selectedTestimony.gender}`) }}
+              {{ $t(`${selectedReferal.phone_number}`) }}
             </p>
           </div>
 
           <div class="col-12">
             <label class="block text-sm font-medium text-[#6f2465]">Descripción</label>
-            <p v-if="selectedTestimony.text" class="text-gray-700">
-              {{ selectedTestimony.text }}
+            <p v-if="selectedReferal.description" class="text-gray-700">
+              {{ selectedReferal.description }}
             </p>
             <p v-else class="text-gray-500">Sin descripción</p>
           </div>

@@ -12,7 +12,7 @@ export const table_configs: ColumnData[] = [
       matchMode: FilterMatchMode.EQUALS,
       value: null,
     },
-    sorteable: false,
+    sorteable: true,
     dataType: "numeric",
   },
   {
