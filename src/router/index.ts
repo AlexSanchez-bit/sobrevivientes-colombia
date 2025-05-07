@@ -10,6 +10,7 @@ import { blogRoutes } from "./modules/blog_entries";
 import { chatRoutes } from "./modules/chat";
 import { botRoutes } from "./modules/bot";
 import { staffRoutes } from "./modules/staff";
+import { allieRoutes } from "./modules/allies";
 
 const router = createRouter({
   history: createWebHistory("#"),
@@ -28,6 +29,7 @@ const router = createRouter({
         ...laicsRoutes,
         ...userRoutes,
         ...promotionsRoutes,
+        ...allieRoutes,
         ...blogRoutes,
         ...chatRoutes,
         ...botRoutes,

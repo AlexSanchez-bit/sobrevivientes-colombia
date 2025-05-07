@@ -22,6 +22,25 @@ export const MenuList: MenuListItem[] = [
         type: GroupMenuType.Normal,
         permission: [Permission.READ_STAFF_MEMBERS],
       },
+
+      {
+        name: "Aliados",
+        icon: "pi pi-link",
+        router_direction: "/allies",
+        type: GroupMenuType.Normal,
+        permission: [Permission.READ_ALLIES],
+      },
+
+
+    ],
+  },
+  {
+    name: "Actividades de la red",
+    icon: "pi pi-envelope",
+    router_direction: "",
+    type: GroupMenuType.Static,
+    childrenMenu: [
+
       {
         name: "Testimonios",
         icon: "pi pi-clipboard",
@@ -45,12 +64,17 @@ export const MenuList: MenuListItem[] = [
       },
       {
         name: "Blog",
-        icon: "pi pi-clipboard",
+        icon: "pi pi-book",
         router_direction: "/blog-entries",
         type: GroupMenuType.Normal,
         permission: [Permission.READ_BLOG_ENTRIES],
       },
-    ],
+
+
+
+    ]
+
+
   },
   {
     name: "Atención a usuarios",

@@ -56,7 +56,9 @@
     "WRITE_BOT_TRAIN": "Entrenar el bot",
     "READ_BOT_TRAIN": "Ver datos de entrenamiento del bot",
     "WRITE_STAFF_MEMBER": "Modificar Staff",
-    "READ_STAFF_MEMBER": "Ver Staff"
+    "READ_STAFF_MEMBER": "Ver Staff",
+    "READ_ALLIES":"Ver Permisos",
+    "WRITE_ALLIES":"Modificar Permisos"
   },
   "materials": "Ingredientes",
   "material": "Ingrediente",
