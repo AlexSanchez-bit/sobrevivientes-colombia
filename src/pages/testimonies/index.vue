@@ -153,7 +153,7 @@ const aviable_statuses = (status) => {
           <Avatar v-if="selectedTestimony.laic_?.image" :image="selectedTestimony.laic_.image" size="large"
             shape="circle" />
           <div>
-            <h3 class="font-bold text-[#6f2465]">Laico asociado</h3>
+            <h3 class="font-bold text-[#6f2465]">tipo de abusador asociado</h3>
             <p class="text-gray-600">
               {{ selectedTestimony.laic_?.name || "Sin laico asignado" }}
             </p>

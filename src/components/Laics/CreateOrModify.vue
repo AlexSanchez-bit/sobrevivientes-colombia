@@ -4,20 +4,11 @@
       <p class="text-center absolute top-0 left-2">
         {{ $t("icon") }}
       </p>
-      <img
-        :src="profileImage ?? '/extras/defaultprofile.jpg'"
-        alt=""
-        class="w-24 h-24 border border-gray-300 object-cover"
-      />
-      <input
-        type="file"
-        accept="image/*"
-        class="absolute inset-0 opacity-0 cursor-pointer"
-        @change="onProfileImageChange"
-      />
-      <i
-        class="pi pi-upload pi-2x absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-darkblue"
-      ></i>
+      <img :src="profileImage ?? '/extras/defaultprofile.jpg'" alt=""
+        class="w-24 h-24 border border-gray-300 object-cover" />
+      <input type="file" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer"
+        @change="onProfileImageChange" />
+      <i class="pi pi-upload pi-2x absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-darkblue"></i>
     </div>
   </div>
 
@@ -26,44 +17,26 @@
     <div>
       <label for="name" class="block text-sm font-medium">{{
         $t("name")
-      }}</label>
-      <InputText
-        id="name"
-        v-model="form.name"
-        :class="{ 'p-invalid': errors.name }"
-        class="w-full"
-      />
+        }}</label>
+      <InputText id="name" v-model="form.name" :class="{ 'p-invalid': errors.name }" class="w-full" />
       <small v-if="errors.name" class="text-red-500">{{
         $t(errors.name)
-      }}</small>
+        }}</small>
     </div>
 
     <!-- Apellidos -->
     <div>
       <label for="description" class="block text-sm font-medium">{{
         $t("description")
-      }}</label>
-      <TinyMce
-        id="description"
-        :value="form.description"
-        menubar="format"
-        @input="form.description = $event"
-      />
+        }}</label>
+      <TinyMce id="description" :value="form.description" menubar="format" @input="form.description = $event" />
     </div>
 
     <!-- Número Telefónico -->
 
     <!-- Botón de Enviar -->
-    <Button
-      type="submit"
-      :label="
-        mode === 'create' ? 'Crear tipo de laico' : 'Editar tipo de Laico'
-      "
-      :loading="loading"
-      icon="pi pi-user-plus"
-      class="w-full"
-      :disabled="isSubmitting"
-    />
+    <Button type="submit" :label="mode === 'create' ? 'Crear tipo de Abusador' : 'Editar tipo de Abusador'
+      " :loading="loading" icon="pi pi-user-plus" class="w-full" :disabled="isSubmitting" />
   </form>
 </template>
 

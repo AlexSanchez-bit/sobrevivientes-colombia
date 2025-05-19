@@ -62,7 +62,7 @@ export const MenuList: MenuListItem[] = [
         permission: [Permission.READ_TESTIMONIES],
       },
       {
-        name: "Tipos Laicos",
+        name: "Jerarquía de abusadores",
         icon: "pi pi-crown",
         router_direction: "/laics",
         type: GroupMenuType.Normal,

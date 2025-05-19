@@ -24,37 +24,22 @@ const refresh = () => {
   <div>
     <Table ref="table" :dataService="service" :columns="table_configs">
       <template #header>
-        <h1 class="">Tipo Laico</h1>
+        <h1 class="">Jerarqíua de abusadores</h1>
       </template>
 
       <template #toolbar>
-        <router-link
-          v-permission="[Permission.WRITE_LAIC_TYPES]"
-          to="laics/create"
-        >
-          <Button
-            icon="pi pi-plus"
-            v-tooltip.bottom="{
-              value: 'Crear Tipo de Laico',
-              showDelay: 100,
-              hideDelay: 300,
-            }"
-            severity="secondary"
-            text
-            rounded
-            outlined
-          />
+        <router-link v-permission="[Permission.WRITE_LAIC_TYPES]" to="laics/create">
+          <Button icon="pi pi-plus" v-tooltip.bottom="{
+            value: 'Crear Tipo de Laico',
+            showDelay: 100,
+            hideDelay: 300,
+          }" severity="secondary" text rounded outlined />
         </router-link>
       </template>
 
       <template #column-actions="{ data }">
-        <Actions
-          :id="data.id"
-          :editRoute="`/laics/${data.id}/edit`"
-          :delete-cb="service"
-          @removed="refresh"
-          v-if="data"
-        ></Actions>
+        <Actions :id="data.id" :editRoute="`/laics/${data.id}/edit`" :delete-cb="service" @removed="refresh"
+          v-if="data"></Actions>
       </template>
       <template #column-name="{ data }">
         <div v-if="data" class="flex flex-row items-center">

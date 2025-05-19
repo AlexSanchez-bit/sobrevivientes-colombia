@@ -43,10 +43,10 @@
     "READ_USER": "Ver Usuarios",
     "READ_TESTIMONY": "Ver Testimonios",
     "READ_PROMOTION": "Ver Promociones",
-    "READ_LAIC_TYPE": "Ver Tipos de Laicos",
+    "READ_LAIC_TYPE": "Ver Jerarquías de abusadores",
     "WRITE_USER": "Modificar Usuarios",
     "WRITE_TESTIMONY": "Modificar testimonios",
-    "WRITE_LAIC_TYPE": "Modificar tipos de Laicos",
+    "WRITE_LAIC_TYPE": "Modificar Jerarquías de abusadores",
     "WRITE_PROMOTION": "Modificar Promociones",
     "WRITE_USER_PERMISSION": "Modificar permisos de usuarios",
     "WRITE_BLOG_ENTRIES": "Escribir Blog",
@@ -156,5 +156,7 @@
     "FEMALE": "Femenino",
     "OTHER": "Otro",
     "NIL": "No especificado"
-  }
+  },
+    "testimony_edited":"testimonio editado",
+"changes_saved":"Cambio guardado"
 }
